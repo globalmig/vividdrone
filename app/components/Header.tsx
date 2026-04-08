@@ -64,16 +64,16 @@ export default function Header() {
 
   return (
     <header className={`fixed inset-x-0 top-0 z-30 transition-all duration-300 ${scrolled ? "border-b border-white/60 bg-white/75 backdrop-blur-xl" : "border-b border-transparent bg-transparent"}`}>
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-2 lg:px-8">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-0 lg:px-8">
         <a href="#top" className="flex items-center gap-3">
-          <Image src="/images/비비드드론로고2.png" alt="Vivid Drone Studio logo" width={200} height={100} className="h-20 w-auto" priority />
+          <Image src="/images/비비드드론로고2.png" alt="Vivid Drone Studio logo" width={600} height={300} className="h-20 md:h-24 w-auto" priority />
         </a>
         <div className="flex items-center gap-4">
           <nav className={`md:flex items-center gap-5 text-sm transition-colors duration-300 hidden ${scrolled ? "text-slate-600" : "text-white"}`}>
-            <a href="#products" className={`transition ${scrolled ? "hover:text-slate-950" : "hover:text-white/70"}`}>
-              Products
+            <a href="#products" className={`transition ${scrolled ? "hover:text-[#5eaefd]" : "hover:text-white/70"}`}>
+              Portfolio
             </a>
-            <a href="#contact" className={`transition ${scrolled ? "hover:text-[#5eaefd]" : "hover:text-white/70"}`}>
+            <a href="#contact" className={`transition ${scrolled ? "hover:text-[#fee014]" : "hover:text-white/70"}`}>
               Contact
             </a>
           </nav>
