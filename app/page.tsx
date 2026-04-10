@@ -132,8 +132,30 @@ export default function Home() {
                     <div className="flex items-center justify-between gap-3 text-sm">
                       {/* <p className="font-semibold uppercase tracking-[0.32em] text-sky-700">0{index + 1}</p> */}
                       <p className="text-xs font-medium uppercase tracking-[0.24em] text-slate-400">{product.category}</p>
+                      {product.href && (
+                        <span className="lg:hidden flex items-center gap-1.5 rounded-full bg-slate-100 border border-slate-300 px-3 py-1 text-xs font-medium text-slate-500">
+                          <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
+                            <path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.38.55A3.02 3.02 0 0 0 .5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 0 0 2.12 2.14C4.46 20.5 12 20.5 12 20.5s7.54 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.75 15.52V8.48L15.5 12l-5.75 3.52z" />
+                          </svg>
+                          YouTube
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3">
+                            <polyline points="9 18 15 12 9 6" />
+                          </svg>
+                        </span>
+                      )}
                     </div>
-                    <h3 className="mt-4 text-xl font-semibold tracking-[-0.04em] text-slate-950 md:text-3xl">{product.title}</h3>
+                    <h3 className="mt-4 text-xl font-medium tracking-[-0.04em]  text-slate-950 md:text-2xl">{product.title}</h3>
+                    {product.href && (
+                      <span className="hidden lg:inline-flex mt-3 items-center gap-1.5 self-start rounded-full bg-slate-100 border border-slate-300 px-3 py-1 text-xs font-medium text-slate-500">
+                        <svg viewBox="0 0 24 24" fill="currentColor" className="h-3.5 w-3.5">
+                          <path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.38.55A3.02 3.02 0 0 0 .5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 0 0 2.12 2.14C4.46 20.5 12 20.5 12 20.5s7.54 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.75 15.52V8.48L15.5 12l-5.75 3.52z" />
+                        </svg>
+                        YouTube
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-3 w-3">
+                          <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                      </span>
+                    )}
                     {/* <p className="mt-5 max-w-xl text-base leading-8 text-slate-600 sm:text-lg">{product.description}</p> */}
                   </div>
                 </article>
@@ -185,28 +207,28 @@ export default function Home() {
           </div>
 
           <form className="mt-10 rounded-[2rem] border border-amber-200/90 bg-white/92 px-4 py-6 md:p-6 shadow-[0_24px_60px_rgba(161,98,7,0.14)] sm:p-8">
-              <div className="flex w-full flex-col gap-4 md:flex-row">
-                <label className="flex flex-col gap-2 text-sm font-medium text-slate-700 w-full">
-                  이름
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="성함"
-                    className="h-12 rounded-2xl border border-slate-200 bg-slate-50 px-4 text-base outline-none transition placeholder:text-slate-400 focus:border-amber-400 focus:bg-white"
-                  />
-                </label>
-                <label className="flex flex-col gap-2 text-sm font-medium text-slate-700 w-full">
-                  연락처
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="010-0000-0000"
-                    className="h-12 rounded-2xl border border-slate-200 bg-slate-50 px-4 text-base outline-none transition placeholder:text-slate-400 focus:border-amber-400 focus:bg-white"
-                  />
-                </label>
-              </div>
+            <div className="flex w-full flex-col gap-4 md:flex-row">
+              <label className="flex flex-col gap-2 text-sm font-medium text-slate-700 w-full">
+                이름
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="성함"
+                  className="h-12 rounded-2xl border border-slate-200 bg-slate-50 px-4 text-base outline-none transition placeholder:text-slate-400 focus:border-amber-400 focus:bg-white"
+                />
+              </label>
+              <label className="flex flex-col gap-2 text-sm font-medium text-slate-700 w-full">
+                연락처
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="010-0000-0000"
+                  className="h-12 rounded-2xl border border-slate-200 bg-slate-50 px-4 text-base outline-none transition placeholder:text-slate-400 focus:border-amber-400 focus:bg-white"
+                />
+              </label>
+            </div>
 
-              {/* <label className="mt-4 flex flex-col gap-2 text-sm font-medium text-slate-700">
+            {/* <label className="mt-4 flex flex-col gap-2 text-sm font-medium text-slate-700">
               이메일
               <input
                 type="email"
@@ -216,20 +238,20 @@ export default function Home() {
               />
             </label> */}
 
-              <label className="mt-10 flex flex-col gap-2 text-sm font-medium text-slate-700">
-                문의 내용
-                <textarea
-                  name="message"
-                  rows={6}
-                  placeholder="촬영 목적, 희망 일정, 참고할 내용을 적어주세요."
-                  className="rounded-[1.5rem] border border-slate-200 bg-slate-50 px-4 py-4 text-base leading-7 outline-none transition placeholder:text-slate-400 focus:border-amber-400 focus:bg-white"
-                />
-              </label>
+            <label className="mt-10 flex flex-col gap-2 text-sm font-medium text-slate-700">
+              문의 내용
+              <textarea
+                name="message"
+                rows={6}
+                placeholder="촬영 목적, 희망 일정, 참고할 내용을 적어주세요."
+                className="rounded-[1.5rem] border border-slate-200 bg-slate-50 px-4 py-4 text-base leading-7 outline-none transition placeholder:text-slate-400 focus:border-amber-400 focus:bg-white"
+              />
+            </label>
 
-              <button type="submit" className="mt-10 inline-flex h-12 w-full items-center justify-center rounded-full bg-amber-300 text-sm font-semibold text-slate-950 transition hover:bg-amber-400">
-                보내기
-              </button>
-            </form>
+            <button type="submit" className="mt-10 inline-flex h-12 w-full items-center justify-center rounded-full bg-amber-300 text-sm font-semibold text-slate-950 transition hover:bg-amber-400">
+              보내기
+            </button>
+          </form>
         </div>
       </section>
 
