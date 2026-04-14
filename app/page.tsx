@@ -2,6 +2,7 @@ import Image from "next/image";
 import HeroVideo from "./components/HeroVideo";
 import Header from "./components/Header";
 import ContactForm from "./components/ContactForm";
+import FadeIn from "./components/FadeIn";
 
 const featuredProducts = [
   {
@@ -109,10 +110,12 @@ export default function Home() {
 
       <section id="products" className="border-b border-slate-200/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.62),rgba(232,243,255,0.7))]">
         <div className="mx-auto w-full max-w-6xl px-6 py-20 lg:px-8">
-          <div className="w-full border-b border-[#5aaafa] pb-4">
-            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-sky-700">Portfolio</p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-4xl ">대표 참여 작품</h2>
-          </div>
+          <FadeIn>
+            <div className="w-full border-b border-[#5aaafa] pb-4">
+              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-sky-700">Portfolio</p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-4xl ">대표 참여 작품</h2>
+            </div>
+          </FadeIn>
 
           <div className="mt-14 space-y-6">
             {featuredProducts.map((product, index) => {
@@ -164,13 +167,15 @@ export default function Home() {
 
               if (product.href) {
                 return (
-                  <a key={product.title} href={product.href} target="_blank" rel="noreferrer" className="block">
-                    {card}
-                  </a>
+                  <FadeIn key={product.title}>
+                    <a href={product.href} target="_blank" rel="noreferrer" className="block">
+                      {card}
+                    </a>
+                  </FadeIn>
                 );
               }
 
-              return <div key={product.title}>{card}</div>;
+              return <FadeIn key={product.title}>{card}</FadeIn>;
             })}
           </div>
         </div>
@@ -178,10 +183,13 @@ export default function Home() {
 
       <section id="contact" className="border-b border-slate-200/70 bg-[linear-gradient(180deg,rgba(230, 227, 213, 0.72),rgba(255,255,255,0.92))]">
         <div className="mx-auto w-full max-w-4xl px-4 py-24 lg:px-8">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-amber-800">Contact</p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-4xl  w-full border-b border-[#ffe014] pb-4">문의하기</h2>
-            <p className="mt-6 text-md md:text-lg leading-8 text-slate-700 break-keep">촬영 목적, 일정, 예산 범위를 간단히 적어주세요</p>
+          <FadeIn>
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-amber-800">Contact</p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-4xl  w-full border-b border-[#ffe014] pb-4">문의하기</h2>
+              <p className="mt-6 text-md md:text-lg leading-8 text-slate-700 break-keep">촬영 목적, 일정, 예산 범위를 간단히 적어주세요</p>
+            </div>
+          </FadeIn>
             {/* <div className="mt-8 space-y-3">
               {contactItems.map((item) => {
                 const Icon = item.icon;
@@ -205,9 +213,10 @@ export default function Home() {
                 );
               })}
             </div> */}
-          </div>
 
-          <ContactForm />
+          <FadeIn delay={100}>
+            <ContactForm />
+          </FadeIn>
         </div>
       </section>
 
