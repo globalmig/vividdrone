@@ -88,7 +88,7 @@ export default function HeroVideo() {
   }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute inset-0 overflow-hidden bg-black">
       {[0, 1].map((slot) => (
         <video
           key={slot}
