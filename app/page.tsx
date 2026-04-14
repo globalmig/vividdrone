@@ -1,6 +1,7 @@
 import Image from "next/image";
 import HeroVideo from "./components/HeroVideo";
 import Header from "./components/Header";
+import ContactForm from "./components/ContactForm";
 
 const featuredProducts = [
   {
@@ -206,52 +207,7 @@ export default function Home() {
             </div> */}
           </div>
 
-          <form className="mt-10 rounded-[2rem] border border-amber-200/90 bg-white/92 px-4 py-6 md:p-6 shadow-[0_24px_60px_rgba(161,98,7,0.14)] sm:p-8">
-            <div className="flex w-full flex-col gap-4 md:flex-row">
-              <label className="flex flex-col gap-2 text-sm font-medium text-slate-700 w-full">
-                이름
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="성함"
-                  className="h-12 rounded-2xl border border-slate-200 bg-slate-50 px-4 text-base outline-none transition placeholder:text-slate-400 focus:border-amber-400 focus:bg-white"
-                />
-              </label>
-              <label className="flex flex-col gap-2 text-sm font-medium text-slate-700 w-full">
-                연락처
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="010-0000-0000"
-                  className="h-12 rounded-2xl border border-slate-200 bg-slate-50 px-4 text-base outline-none transition placeholder:text-slate-400 focus:border-amber-400 focus:bg-white"
-                />
-              </label>
-            </div>
-
-            {/* <label className="mt-4 flex flex-col gap-2 text-sm font-medium text-slate-700">
-              이메일
-              <input
-                type="email"
-                name="email"
-                placeholder="example@email.com"
-                className="h-12 rounded-2xl border border-slate-200 bg-slate-50 px-4 text-base outline-none transition placeholder:text-slate-400 focus:border-amber-400 focus:bg-white"
-              />
-            </label> */}
-
-            <label className="mt-10 flex flex-col gap-2 text-sm font-medium text-slate-700">
-              문의 내용
-              <textarea
-                name="message"
-                rows={6}
-                placeholder="촬영 목적, 희망 일정, 참고할 내용을 적어주세요."
-                className="rounded-[1.5rem] border border-slate-200 bg-slate-50 px-4 py-4 text-base leading-7 outline-none transition placeholder:text-slate-400 focus:border-amber-400 focus:bg-white"
-              />
-            </label>
-
-            <button type="submit" className="mt-10 inline-flex h-12 w-full items-center justify-center rounded-full bg-amber-300 text-sm font-semibold text-slate-950 transition hover:bg-amber-400">
-              보내기
-            </button>
-          </form>
+          <ContactForm />
         </div>
       </section>
 
