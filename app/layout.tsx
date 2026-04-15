@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Noto_Sans_KR } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import "./globals.css";
 
@@ -23,7 +24,24 @@ export const metadata: Metadata = {
     template: "%s | Vivid Drone Studio",
   },
   description: "드론 촬영, 뮤직비디오, CF, 방송 영상 제작 전문 스튜디오. 공간과 브랜드의 감각적인 순간을 영상으로 담아드립니다.",
-  keywords: ["드론 촬영", "영상 제작", "뮤직비디오", "CF 촬영", "방송 촬영", "항공 촬영", "브랜드 영상", "비비드드론", "Vivid Drone Studio", "TWS 투어스", "우기 YUQI", "Hearts2Hearts 하츠투하츠", "tvN 헬스파머", "맥심가옥", "케이팝 뮤직비디오", "아이돌 MV 촬영"],
+  keywords: [
+    "드론 촬영",
+    "영상 제작",
+    "뮤직비디오",
+    "CF 촬영",
+    "방송 촬영",
+    "항공 촬영",
+    "브랜드 영상",
+    "비비드드론",
+    "Vivid Drone Studio",
+    "TWS 투어스",
+    "우기 YUQI",
+    "Hearts2Hearts 하츠투하츠",
+    "tvN 헬스파머",
+    "맥심가옥",
+    "케이팝 뮤직비디오",
+    "아이돌 MV 촬영",
+  ],
   authors: [{ name: "Vivid Drone Studio" }],
   openGraph: {
     type: "website",
@@ -68,6 +86,7 @@ export default function RootLayout({
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKVCLLNK" height="0" width="0" style={{ display: "none", visibility: "hidden" }} />
         </noscript>
         {children}
+        <Analytics />
       </body>
       <Script
         id="gtm-script"
