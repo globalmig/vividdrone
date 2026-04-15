@@ -190,7 +190,7 @@ export default function Home() {
               <p className="mt-6 text-md md:text-lg leading-8 text-slate-700 break-keep">촬영 목적, 일정, 예산 범위를 간단히 적어주세요</p>
             </div>
           </FadeIn>
-            {/* <div className="mt-8 space-y-3">
+          {/* <div className="mt-8 space-y-3">
               {contactItems.map((item) => {
                 const Icon = item.icon;
 
